@@ -1,8 +1,10 @@
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/lucky6890/sample_api_go/api/helpers"
 )
 
 type TestHandler struct {
@@ -13,8 +15,5 @@ func NewTestHandler() *TestHandler {
 }
 
 func (h TestHandler) Test(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"test": "test",
-	})
-	return
+	c.JSON(http.StatusOK, helpers.GenerateBaseResponse("Test", true, 0))
 }
