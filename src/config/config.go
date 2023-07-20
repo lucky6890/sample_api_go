@@ -2,9 +2,10 @@ package config
 
 import (
 	"errors"
-	"github.com/spf13/viper"
 	"log"
 	"os"
+
+	"github.com/spf13/viper"
 )
 
 type Config struct {
@@ -82,10 +83,10 @@ func loadConfig(filename string, fileType string) (*viper.Viper, error) {
 
 func getConfigPath(env string) string {
 	if env == "docker" {
-		return "src/config/config-docker.yml"
+		return "../../src/config/config-docker.yml"
 	} else if env == "production" {
-		return "src/config/config-production.yml"
+		return "../../src/config/config-production.yml"
 	} else {
-		return "src/config/config-development.yml"
+		return "../../src/config/config-development.yml"
 	}
 }
